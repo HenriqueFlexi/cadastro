@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const materiais = JSON.parse(localStorage.getItem('materiais')) || [];
         materiais.forEach((material, index) => {
             const li = document.createElement('li');
-            li.textContent = `Descrição: ${material.descricao}, Geral: ${material.geral}, Unidade: ${material.unidadePadrao}, Usado Como: ${material.usadoComo}`;
+            li.textContent = `Descrição: ${material.descricao}, Categoria: ${material.geral}, Unidade: ${material.unidadePadrao}, Tipo de item: ${material.usadoComo}`;
             materiaisList.appendChild(li);
         });
     }
