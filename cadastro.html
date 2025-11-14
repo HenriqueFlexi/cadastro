@@ -5,172 +5,186 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="cadastro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Cadastro</h1>
 
+    <h1 class="titulo-cadastro">Cadastro</h1>
+
+    <!-- ABA MATERIAIS -->
     <div class="collapsible">
         <button type="button" class="collapsible-button" id="materiaisButton">
             <span class="arrow">▶</span> Cadastro de Materiais
         </button>
         <div class="content" id="materiaisContent">
-            <form id="materialForm">
-                <label for="descricao">DESCRIÇÃO:</label>
-                <input type="text" id="descricao" name="descricao" required><br><br>
+            <div class="split-container">
+                <div class="left-panel">
+                    <form id="materialForm">
+                        <label for="descricao">DESCRIÇÃO:</label>
+                        <input type="text" id="descricao" name="descricao" required><br><br>
 
-                <label for="geral">CATEGORIA:</label>
-                <select id="geral" name="geral" required>
-                    <option value="">Selecione</option>
-                    <option value="Marcenaria Móvel">Marcenaria - Móveis</option>
-                    <option value="Marcenaria Estrutural">Marcenaria Estrutural</option>
-                    <option value="Ferramentas">Ferramentas</option>
-                    <option value="Insumos Diversos">Insumos Diversos</option>
-                    <option value="Elétrica">Elétrica</option>
-                    <option value="Hidráulica">Hidráulica</option>
-                    <option value="Chumbo">Chumbo</option>
-                    <option value="Serralheria">Serralheria</option>
-                    <option value="Ar Condicionado">Ar Condicionado</option>
-                    <option value="Acessórios / Mobiliários">Acessórios / Mobiliários</option>
-                    <option value="Divulgação e Marketing - Adesivagem">Divulgação e Marketing - Adesivagem</option>
-                    <option value="Equipamentos">Equipamentos</option>
-                    <option value="Documentos">Documentos</option>
-                    <option value="Veículo / Implemento">Veículo / Implemento</option>
-                    <option value="Serviços de Demolição">Serviços de Demolição</option>
-                    <option value="Serviço Prestado">Serviço Prestado</option>
-                    <option value="Serviço Tomado">Serviço Tomado</option>
-                    <option value="Uso e Consumo">Uso e Consumo</option>
-                </select><br><br>
+                        <label for="geral">CATEGORIA:</label>
+                        <select id="geral" name="geral" required>
+                            <option value="">Selecione</option>
+                            <option value="Marcenaria Móvel">Marcenaria - Móveis</option>
+                            <option value="Marcenaria Estrutural">Marcenaria Estrutural</option>
+                            <option value="Ferramentas">Ferramentas</option>
+                            <option value="Insumos Diversos">Insumos Diversos</option>
+                            <option value="Elétrica">Elétrica</option>
+                            <option value="Hidráulica">Hidráulica</option>
+                            <option value="Chumbo">Chumbo</option>
+                            <option value="Serralheria">Serralheria</option>
+                            <option value="Ar Condicionado">Ar Condicionado</option>
+                            <option value="Acessórios / Mobiliários">Acessórios / Mobiliários</option>
+                            <option value="Divulgação e Marketing - Adesivagem">Divulgação e Marketing - Adesivagem</option>
+                            <option value="Equipamentos">Equipamentos</option>
+                            <option value="Documentos">Documentos</option>
+                            <option value="Veículo / Implemento">Veículo / Implemento</option>
+                            <option value="Serviços de Demolição">Serviços de Demolição</option>
+                            <option value="Serviço Prestado">Serviço Prestado</option>
+                            <option value="Serviço Tomado">Serviço Tomado</option>
+                            <option value="Uso e Consumo">Uso e Consumo</option>
+                        </select><br><br>
 
-                <label for="unidadePadrao">UNIDADE DE MEDIDA:</label>
-                <select id="unidadePadrao" name="unidadePadrao" required>
-                    <option value="">Selecione</option>
-                    <option value="BR">BR - BR</option>
-                    <option value="CX">Caixa - CX</option>
-                    <option value="CT">Cartela (50) - CT</option>
-                    <option value="CM">Centímetro - CM</option>
-                    <option value="CH">CH - CH</option>
-                    <option value="CJ">Conjunto - CJ</option>
-                    <option value="DI">Diária - DI</option>
-                    <option value="DZ">Dúzia - DZ</option>
-                    <option value="GL">Galão - GL</option>
-                    <option value="GF">Garrafa - GF</option>
-                    <option value="GR">Gramas - GR</option>
-                    <option value="HR">Horas - HR</option>
-                    <option value="JG">JG - JG</option>
-                    <option value="KW">Kilowatt Hora - KW</option>
-                    <option value="LA">LA - LA</option>
-                    <option value="LT">Litro - LT</option>
-                    <option value="M3">Metro Cúbico - M3</option>
-                    <option value="M">Metro (M) - M</option>
-                    <option value="MT">Metro (MT) - MT</option>
-                    <option value="M2">Metro Quadrado - M2</option>
-                    <option value="ML">Mililitro - ML</option>
-                    <option value="PT">Pacote - PT</option>
-                    <option value="PA">Par - PA</option>
-                    <option value="PC">Peça - PC</option>
-                    <option value="K">Quilate - K</option>
-                    <option value="KG">Quilograma - KG</option>
-                    <option value="RL">Rolo - RL</option>
-                    <option value="TB">TB - TB</option>
-                    <option value="TN">Tonelada (TN) - TN</option>
-                    <option value="TO">Tonelada (TO) - TO</option>
-                    <option value="UN">Unidade - UN</option>
-                </select><br><br>
+                        <label for="unidadePadrao">UNIDADE DE MEDIDA:</label>
+                        <select id="unidadePadrao" name="unidadePadrao" required>
+                            <option value="">Selecione</option>
+                            <option value="BR">BR - BR</option>
+                            <option value="CX">Caixa - CX</option>
+                            <option value="CT">Cartela (50) - CT</option>
+                            <option value="CM">Centímetro - CM</option>
+                            <option value="CH">CH - CH</option>
+                            <option value="CJ">Conjunto - CJ</option>
+                            <option value="DI">Diária - DI</option>
+                            <option value="DZ">Dúzia - DZ</option>
+                            <option value="GL">Galão - GL</option>
+                            <option value="GF">Garrafa - GF</option>
+                            <option value="GR">Gramas - GR</option>
+                            <option value="HR">Horas - HR</option>
+                            <option value="JG">JG - JG</option>
+                            <option value="KW">Kilowatt Hora - KW</option>
+                            <option value="LA">LA - LA</option>
+                            <option value="LT">Litro - LT</option>
+                            <option value="M3">Metro Cúbico - M3</option>
+                            <option value="M">Metro (M) - M</option>
+                            <option value="MT">Metro (MT) - MT</option>
+                            <option value="M2">Metro Quadrado - M2</option>
+                            <option value="ML">Mililitro - ML</option>
+                            <option value="PT">Pacote - PT</option>
+                            <option value="PA">Par - PA</option>
+                            <option value="PC">Peça - PC</option>
+                            <option value="K">Quilate - K</option>
+                            <option value="KG">Quilograma - KG</option>
+                            <option value="RL">Rolo - RL</option>
+                            <option value="TB">TB - TB</option>
+                            <option value="TN">Tonelada (TN) - TN</option>
+                            <option value="TO">Tonelada (TO) - TO</option>
+                            <option value="UN">Unidade - UN</option>
+                        </select><br><br>
 
-                <label for="usadoComo">TIPO DO ITEM:</label>
-                <select id="usadoComo" name="usadoComo" required>
-                    <option value="">Selecione</option>
-                    <option value="Embalagem">Embalagem</option>
-                    <option value="Subproduto">Subproduto</option>
-                    <option value="Prod. Intermediário">Produto Intermediário</option>
-                    <option value="Demonstração">Demonstração</option>
-                    <option value="Brinde">Brinde</option>
-                    <option value="Consumo">Uso e Consumo</option>
-                    <option value="Revenda (por fórmula)">Mercadoria para Revenda</option>
-                    <option value="Venda (fabricação própria)">Venda (fabricação própria)</option>
-                    <option value="Brinde (NF)">Brinde (NF)</option>
-                    <option value="Imobilizado">Ativo Imobilizado</option>
-                    <option value="Matéria prima">Matéria prima</option>
-                    <option value="Em processo">Produto em processo</option>
-                    <option value="Produto Acabado">Produto Acabado</option>
-                    <option value="Outros insumos">Outros insumos</option>
-                    <option value="Terceiros">Outras</option>
-                    <option value="Serviços">Serviços</option>
-                </select><br><br>
+                        <label for="usadoComo">TIPO DO ITEM:</label>
+                        <select id="usadoComo" name="usadoComo" required>
+                            <option value="">Selecione</option>
+                            <option value="Embalagem">Embalagem</option>
+                            <option value="Subproduto">Subproduto</option>
+                            <option value="Prod. Intermediário">Produto Intermediário</option>
+                            <option value="Demonstração">Demonstração</option>
+                            <option value="Brinde">Brinde</option>
+                            <option value="Consumo">Uso e Consumo</option>
+                            <option value="Revenda (por fórmula)">Mercadoria para Revenda</option>
+                            <option value="Venda (fabricação própria)">Venda (fabricação própria)</option>
+                            <option value="Brinde (NF)">Brinde (NF)</option>
+                            <option value="Imobilizado">Ativo Imobilizado</option>
+                            <option value="Matéria prima">Matéria prima</option>
+                            <option value="Em processo">Produto em processo</option>
+                            <option value="Produto Acabado">Produto Acabado</option>
+                            <option value="Outros insumos">Outros insumos</option>
+                            <option value="Terceiros">Outras</option>
+                            <option value="Serviços">Serviços</option>
+                        </select><br><br>
 
-                <button type="submit">Cadastrar Material</button>
-            </form>
-
-            <h2>Materiais Cadastrados</h2>
-            <ul id="materiaisList"></ul>
+                        <button type="submit">Cadastrar Material</button>
+                    </form>
+                </div>
+                <div class="right-panel">
+                    <h2>Materiais Cadastrados</h2>
+                    <ul id="materiaisList"></ul>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- ABA CLIENTES/FORNECEDORES -->
     <div class="collapsible">
         <button type="button" class="collapsible-button" id="clientesButton">
             <span class="arrow">▶</span> Cadastro de Clientes e Fornecedores
         </button>
         <div class="content" id="clientesContent">
-            <form id="clienteFornecedorForm">
-                <label for="tipo">TIPO:</label>
-                <select id="tipo" name="tipo" required>
-                    <option value="">Selecione</option>
-                    <option value="Cliente">Cliente</option>
-                    <option value="Fornecedor">Fornecedor</option>
-                    <option value="Vendedor">Vendedor</option>
-                    <option value="Usuário">Usuário</option>
-                    <option value="Transportadora">Transportadora</option>
-                    <option value="Agência">Agência</option>
-                    <option value="Conta Adiantamento">Conta Adiantamento</option>
-                    <option value="Motorista">Motorista</option>
-                    <option value="Médico">Médico</option>
-                    <option value="Agrônomo">Agrônomo</option>
-                </select><br><br>
+            <div class="split-container">
+                <div class="left-panel">
+                    <form id="clienteFornecedorForm">
+                        <label for="tipo">TIPO:</label>
+                        <select id="tipo" name="tipo" required>
+                            <option value="">Selecione</option>
+                            <option value="Cliente">Cliente</option>
+                            <option value="Fornecedor">Fornecedor</option>
+                            <option value="Vendedor">Vendedor</option>
+                            <option value="Usuário">Usuário</option>
+                            <option value="Transportadora">Transportadora</option>
+                            <option value="Agência">Agência</option>
+                            <option value="Conta Adiantamento">Conta Adiantamento</option>
+                            <option value="Motorista">Motorista</option>
+                            <option value="Médico">Médico</option>
+                            <option value="Agrônomo">Agrônomo</option>
+                        </select><br><br>
 
-                <div class="tabs">
-                    <button type="button" class="tab-button active" onclick="openTab(event, 'endereco')">ABA ENDEREÇO</button>
-                    <button type="button" class="tab-button" onclick="openTab(event, 'fiscal')">ABA FISCAL</button>
+                        <div class="tabs">
+                            <button type="button" class="tab-button active" onclick="openTab(event, 'endereco')">ABA ENDEREÇO</button>
+                            <button type="button" class="tab-button" onclick="openTab(event, 'fiscal')">ABA FISCAL</button>
+                        </div>
+
+                        <div id="endereco" class="tab-content active">
+                            <label for="cep">CEP:</label>
+                            <input type="text" id="cep" name="cep" required><br><br>
+
+                            <label for="endereco">Endereço:</label>
+                            <input type="text" id="endereco" name="endereco" required><br><br>
+
+                            <label for="numero">Número:</label>
+                            <input type="text" id="numero" name="numero" required><br><br>
+
+                            <label for="complemento">Complemento:</label>
+                            <input type="text" id="complemento" name="complemento"><br><br>
+
+                            <label for="bairro">Bairro:</label>
+                            <input type="text" id="bairro" name="bairro" required><br><br>
+
+                            <label for="codCidade">Cód. Cidade:</label>
+                            <input type="text" id="codCidade" name="codCidade" required><br><br>
+                        </div>
+
+                        <div id="fiscal" class="tab-content">
+                            <h3>Classificação ICMS:</h3>
+                            <label for="classificacaoICMS">Tipo de Contribuinte:</label>
+                            <select id="classificacaoICMS" name="classificacaoICMS" required>
+                                <option value="">Selecione</option>
+                                <option value="Produtor Rural">Produtor Rural</option>
+                                <option value="Consumidor Final Não Contribuinte">Consumidor Final Não Contribuinte</option>
+                                <option value="Usar a da TOP">Usar a da TOP</option>
+                                <option value="Revendedor">Revendedor</option>
+                                <option value="Isento de ICMS">Isento de ICMS</option>
+                                <option value="Consumidor Final Contribuinte">Consumidor Final Contribuinte</option>
+                            </select><br><br>
+                        </div>
+
+                        <button type="submit">Cadastrar Cliente/Fornecedor</button>
+                    </form>
                 </div>
-
-                <div id="endereco" class="tab-content active">
-                    <label for="cep">CEP:</label>
-                    <input type="text" id="cep" name="cep" required><br><br>
-
-                    <label for="endereco">Endereço:</label>
-                    <input type="text" id="endereco" name="endereco" required><br><br>
-
-                    <label for="numero">Número:</label>
-                    <input type="text" id="numero" name="numero" required><br><br>
-
-                    <label for="complemento">Complemento:</label>
-                    <input type="text" id="complemento" name="complemento"><br><br>
-
-                    <label for="bairro">Bairro:</label>
-                    <input type="text" id="bairro" name="bairro" required><br><br>
-
-                    <label for="codCidade">Cód. Cidade:</label>
-                    <input type="text" id="codCidade" name="codCidade" required><br><br>
+                <div class="right-panel">
+                    <h2>Clientes e Fornecedores Cadastrados</h2>
+                    <ul id="clientesFornecedoresList"></ul>
                 </div>
-
-                <div id="fiscal" class="tab-content">
-                    <h3>Classificação ICMS:</h3>
-                    <label for="classificacaoICMS">Tipo de Contribuinte:</label>
-                    <select id="classificacaoICMS" name="classificacaoICMS" required>
-                        <option value="">Selecione</option>
-                        <option value="Produtor Rural">Produtor Rural</option>
-                        <option value="Consumidor Final Não Contribuinte">Consumidor Final Não Contribuinte</option>
-                        <option value="Usar a da TOP">Usar a da TOP</option>
-                        <option value="Revendedor">Revendedor</option>
-                        <option value="Isento de ICMS">Isento de ICMS</option>
-                        <option value="Consumidor Final Contribuinte">Consumidor Final Contribuinte</option>
-                    </select><br><br>
-                </div>
-
-                <button type="submit">Cadastrar Cliente/Fornecedor</button>
-            </form>
-
-            <h2>Clientes e Fornecedores Cadastrados</h2>
-            <ul id="clientesFornecedoresList"></ul>
+            </div>
         </div>
     </div>
 
