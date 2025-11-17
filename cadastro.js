@@ -1,3 +1,5 @@
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyTdxZsvw0Aofz_KrIw2rUrwzfgtlFPdtRrqKX3KsHy5IYxLJLrw1gSrl9er68qX_GD/exec';
+
 document.addEventListener('DOMContentLoaded', function() {
     // Collapsible functionality
     const collapsibles = document.querySelectorAll('.collapsible-button');
@@ -39,10 +41,31 @@ document.addEventListener('DOMContentLoaded', function() {
         loadMateriais();
     });
 
-    function saveMaterial(material) {
-        let materiais = JSON.parse(localStorage.getItem('materiais')) || [];
-        materiais.push(material);
-        localStorage.setItem('materiais', JSON.stringify(materiais));
+    async function saveMaterial(material) {
+        try {
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Tentar sem CORS, mas resposta será opaca
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    sheet: 'Materiais',
+                    row: [
+                        material.descricao,
+                        material.geral,
+                        material.unidadePadrao,
+                        material.usadoComo
+                    ]
+                })
+            });
+            // Com no-cors, não podemos ler a resposta JSON, então assumimos sucesso se não houver erro
+            alert('Material enviado para a planilha! Verifique se foi salvo.');
+            // Opcional: ainda salvar no localStorage para exibição imediata
+            let materiais = JSON.parse(localStorage.getItem('materiais')) || [];
+            materiais.push(material);
+            localStorage.setItem('materiais', JSON.stringify(materiais));
+        } catch (error) {
+            alert('Erro de conexão ao salvar material: ' + error.message);
+        }
     }
 
     function loadMateriais() {
@@ -89,10 +112,35 @@ document.addEventListener('DOMContentLoaded', function() {
         loadClientesFornecedores();
     });
 
-    function saveClienteFornecedor(clienteFornecedor) {
-        let clientesFornecedores = JSON.parse(localStorage.getItem('clientesFornecedores')) || [];
-        clientesFornecedores.push(clienteFornecedor);
-        localStorage.setItem('clientesFornecedores', JSON.stringify(clientesFornecedores));
+    async function saveClienteFornecedor(clienteFornecedor) {
+        try {
+            const response = await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors', // Tentar sem CORS, mas resposta será opaca
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    sheet: 'Clientes',
+                    row: [
+                        clienteFornecedor.tipo,
+                        clienteFornecedor.cep,
+                        clienteFornecedor.endereco,
+                        clienteFornecedor.numero,
+                        clienteFornecedor.complemento,
+                        clienteFornecedor.bairro,
+                        clienteFornecedor.codCidade,
+                        clienteFornecedor.classificacaoICMS
+                    ]
+                })
+            });
+            // Com no-cors, não podemos ler a resposta JSON, então assumimos sucesso se não houver erro
+            alert('Cliente/Fornecedor enviado para a planilha! Verifique se foi salvo.');
+            // Opcional: ainda salvar no localStorage para exibição imediata
+            let clientesFornecedores = JSON.parse(localStorage.getItem('clientesFornecedores')) || [];
+            clientesFornecedores.push(clienteFornecedor);
+            localStorage.setItem('clientesFornecedores', JSON.stringify(clientesFornecedores));
+        } catch (error) {
+            alert('Erro de conexão ao salvar cliente/fornecedor: ' + error.message);
+        }
     }
 
     function loadClientesFornecedores() {
