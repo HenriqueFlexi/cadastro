@@ -89,12 +89,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const tipo = document.getElementById('tipo').value;
         const cep = document.getElementById('cep').value;
-        const endereco = document.getElementById('endereco').value;
+        const endereco = document.getElementById('enderecoInput').value;
         const numero = document.getElementById('numero').value;
         const complemento = document.getElementById('complemento').value;
         const bairro = document.getElementById('bairro').value;
         const codCidade = document.getElementById('codCidade').value;
         const classificacaoICMS = document.getElementById('classificacaoICMS').value;
+
+        // Verificar se a aba Endereço está preenchida
+        if (!cep || !endereco || !numero || !complemento || !bairro || !codCidade) {
+            alert('Campos obrigatórios não preenchidos na "Aba Endereço".');
+            return;
+        }
+
+        // Verificar se a aba Fiscal está preenchida
+        if (!classificacaoICMS) {
+            alert('Campos obrigatórios não preenchidos na "Aba Fiscal".');
+            return;
+        }
 
         const clienteFornecedor = {
             tipo,
